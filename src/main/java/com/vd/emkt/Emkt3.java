@@ -1,5 +1,7 @@
 package com.vd.emkt;
 
+import com.vd.emkt.dao.DAOEclipse;
+import com.vd.emkt.modelo.AccionBarraLateral;
 import org.springdoc.core.GroupedOpenApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -18,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.time.Duration;
+import java.util.List;
 
 @SpringBootApplication
 @Controller
@@ -33,6 +36,10 @@ public class Emkt3
         SpringApplication.run(Emkt3.class, args);
         String puertoServer = environment.getProperty("local.server.port");
         System.out.println("CORRIENDO EMKT 3 EN http://localhost:" + puertoServer);
+
+        String jpql = "SELECT a FROM AccionBarraLateral a";
+        List<AccionBarraLateral> arrAcciones = DAOEclipse.findAllByJPQL(jpql);
+        System.out.println("ARR ACCIONEs:" + arrAcciones.size());
     }
 
     @GetMapping(value = "/api")
