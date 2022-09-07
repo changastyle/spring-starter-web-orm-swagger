@@ -16,7 +16,7 @@ public class WebCtl
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(HttpServletRequest request, HttpServletResponse response)
     {
-        return "index";
+        return "home/home";
     }
 
 }

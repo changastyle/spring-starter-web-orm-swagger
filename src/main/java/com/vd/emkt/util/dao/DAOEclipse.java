@@ -1,4 +1,4 @@
-package com.vd.emkt.dao;
+package com.vd.emkt.util.dao;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;

@@ -1,4 +1,4 @@
-package com.vd.emkt.auxiliar;
+package com.vd.emkt.util.auxiliar;
 
 import com.google.gson.Gson;
 import java.util.ArrayList;

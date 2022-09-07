@@ -5,13 +5,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.*;
 import javax.persistence.*;
 
-@Entity @Table(name = "acciones")
+@Entity @Table(name = "menus")
 @Data
 @Builder @NoArgsConstructor @AllArgsConstructor
-public class AccionBarraLateral implements Comparable<AccionBarraLateral>
+public class Menu implements Comparable<Menu>
 {
     //ATRIBUTOS:
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +23,7 @@ public class AccionBarraLateral implements Comparable<AccionBarraLateral>
     private int bgposx;
     private int bgposy;
     private boolean mostrarMenu;
+    private boolean active;
     private boolean requiereAdmin;
 
 
@@ -71,7 +71,7 @@ public class AccionBarraLateral implements Comparable<AccionBarraLateral>
         
         return urlFull;
     }
-    public int compareTo(AccionBarraLateral otro)
+    public int compareTo(Menu otro)
     {
         if(this.orden > otro.getOrden())
         {

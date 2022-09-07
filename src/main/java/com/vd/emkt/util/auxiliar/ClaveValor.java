@@ -1,4 +1,4 @@
-package com.vd.emkt.auxiliar;
+package com.vd.emkt.util.auxiliar;
 
 import javax.persistence.Transient;
 
